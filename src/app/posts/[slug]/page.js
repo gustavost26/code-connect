@@ -7,23 +7,6 @@ import db from "../../../../prisma/db";
 import { redirect } from "next/navigation";
 
 async function getPostBySlug(slug) {
-  // const url = `http://localhost:3042/posts?slug=${slug}`;
-  // const response = await fetch(url);
-
-  // if (!response.ok) {
-  //   logger.error('Ops, alguma coisa correu mal!');
-  //   return [];
-  // }
-
-  // logger.info('Posts obtidos com sucesso!');
-  // const data = await response.json();
-
-  // if (data.length === 0) {
-  //   return {};
-  // }
-
-  // const post = data[0];
-
   try {
     const post = await db.post.findFirst({
       where: {
