@@ -41,7 +41,7 @@ async function getAllPosts(page, searchTerm) {
     }
   }
 
-  const perPage = 6;
+  const perPage = 4;
   const skip = (page - 1) * perPage;
 
   const totalItems = await db.post.count({where});
