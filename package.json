@@ -4,13 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && prisma migrate dev && prisma db seed && next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "dompurify": "^3.2.4",
+    "next": "14.2.24",
+    "prisma": "^6.5.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.24"
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "winston": "^3.17.0"
   }
 }
